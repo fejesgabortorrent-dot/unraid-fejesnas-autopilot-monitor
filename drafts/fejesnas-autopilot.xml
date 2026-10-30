@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- DRAFT: repository/image do not exist yet. Not for CA submission. -->
+<Container version="2">
+  <Name>FejesNAS AutoPilot Monitor</Name>
+  <Repository>ghcr.io/fejesgabortorrent-dot/fejesnas-autopilot-monitor:0.1.0-preview</Repository>
+  <Registry>https://ghcr.io</Registry>
+  <Network>bridge</Network>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Project>https://github.com/fejesgabortorrent-dot/unraid-fejesnas-autopilot-monitor</Project>
+  <Support>https://github.com/fejesgabortorrent-dot/unraid-fejesnas-autopilot-monitor/issues</Support>
+  <Overview>Development preview. Read-only VPN status viewer; authenticated backup actions require a separately installed host companion. No automatic VPN switching. Unraid 8 is not yet validated.</Overview>
+  <Category>Tools:Utilities</Category>
+  <Beta>true</Beta>
+  <WebUI>/Settings/FejesAutoPilot</WebUI>
+  <ExtraParams>--read-only --cap-drop=ALL --security-opt=no-new-privileges --pids-limit=64 --memory=128m --cpus=0.5 --tmpfs /tmp:rw,noexec,nosuid,size=8m -p 127.0.0.1:8864:8864</ExtraParams>
+  <Config Name="Sanitized status directory" Target="/state" Default="/mnt/user/appdata/fejesnas-autopilot-status" Mode="ro" Description="Only a sanitized status.json. No keys, VPN configurations or Docker socket." Type="Path" Display="always" Required="true" Mask="false"/>
+</Container>

@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+state/
+*.conf
+*.key
+*.pem
+*.tar.gz
+*.zip
+*inspect*.json
+payload.txt
+control-settings.php
